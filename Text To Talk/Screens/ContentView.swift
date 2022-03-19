@@ -26,8 +26,10 @@ struct ContentView: View {
     @State private var speechImageState:String = "mute";
     @State private var playState:Bool = false;
     @State private var animationState:Bool = false;
-    
-    
+    @State private var buttonLabel: String = "Text to Talk";
+    @State private var utterance: AVSpeechUtterance = AVSpeechUtterance();
+    @State private var synthesizer: AVSpeechSynthesizer = AVSpeechSynthesizer();
+
     
     var body: some View {
         ZStack{
@@ -103,26 +105,34 @@ struct ContentView: View {
                 
                 Spacer()
                 Button(action:{
-                    playState = !playState;
-                    if(playState){
-                        speechImageState = "microphone";
-                        animationState = true;
-
-                    }
-                    else{
-                        speechImageState = "mute";
-                        animationState = false;
-                    }
-                    
-                    
-                    let utterance = AVSpeechUtterance(string: statement)
+                    utterance = AVSpeechUtterance(string: statement)
                     utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+
                     utterance.rate = 0.5
 
-                    let synthesizer = AVSpeechSynthesizer()
-                    synthesizer.speak(utterance)
+                    
+                    playState = !playState;
+                    print(synthesizer.isSpeaking)
+                    if(playState){
+                        synthesizer.speak(utterance)
+
+                        speechImageState = "microphone";
+                        animationState = true;
+                        buttonLabel = "Cancel";
+                    }
+                    else{
+                        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate);
+
+                        speechImageState = "mute";
+                        animationState = false;
+                        buttonLabel = "Text to Talk";
+                    }
+                    
+                    
+                   
+                
                 }){
-                    Text("Text to Talk")
+                    Text(buttonLabel)
                 }
                 .padding()
                 .foregroundColor(Color.white)

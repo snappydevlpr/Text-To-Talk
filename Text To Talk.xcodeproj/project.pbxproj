@@ -14,6 +14,7 @@
 		434D53F727E00CC200D75243 /* Text_To_TalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D53F627E00CC200D75243 /* Text_To_TalkTests.swift */; };
 		434D540127E00CC200D75243 /* Text_To_TalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D540027E00CC200D75243 /* Text_To_TalkUITests.swift */; };
 		434D540327E00CC200D75243 /* Text_To_TalkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D540227E00CC200D75243 /* Text_To_TalkUITestsLaunchTests.swift */; };
+		434D541227E55C3D00D75243 /* TalkingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D541127E55C3D00D75243 /* TalkingAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		434D53FC27E00CC200D75243 /* Text To TalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Text To TalkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		434D540027E00CC200D75243 /* Text_To_TalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_To_TalkUITests.swift; sourceTree = "<group>"; };
 		434D540227E00CC200D75243 /* Text_To_TalkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_To_TalkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		434D541127E55C3D00D75243 /* TalkingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkingAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,9 @@
 		434D53E427E00CBD00D75243 /* Text To Talk */ = {
 			isa = PBXGroup;
 			children = (
+				434D541027E55C1A00D75243 /* Screens */,
+				434D540F27E55C0800D75243 /* Views */,
 				434D53E527E00CBD00D75243 /* Text_To_TalkApp.swift */,
-				434D53E727E00CBD00D75243 /* ContentView.swift */,
 				434D53E927E00CC200D75243 /* Assets.xcassets */,
 				434D53EB27E00CC200D75243 /* Preview Content */,
 			);
@@ -125,6 +128,22 @@
 				434D540227E00CC200D75243 /* Text_To_TalkUITestsLaunchTests.swift */,
 			);
 			path = "Text To TalkUITests";
+			sourceTree = "<group>";
+		};
+		434D540F27E55C0800D75243 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				434D541127E55C3D00D75243 /* TalkingAnimationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		434D541027E55C1A00D75243 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				434D53E727E00CBD00D75243 /* ContentView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +278,7 @@
 			files = (
 				434D53E827E00CBD00D75243 /* ContentView.swift in Sources */,
 				434D53E627E00CBD00D75243 /* Text_To_TalkApp.swift in Sources */,
+				434D541227E55C3D00D75243 /* TalkingAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
